@@ -19,16 +19,20 @@ load_dotenv()
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
+ALLOWED_HOSTS = ["*"]
+DEBUG = True
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-SECRET_KEY = ("secret_for_testing_only",)
+SECRET_KEY = "secret"
+
 # Application definition
-SHARED_APPS = (
+SHARED_APPS = [
     "wagtail_tenants.customers",
     "wagtail_tenants",
     "tests",
+    "wagtail_modeladmin",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -51,8 +55,7 @@ SHARED_APPS = (
     "django.contrib.staticfiles",
     "wagtail.api.v2",
     "rest_framework",
-)
-
+]
 
 TENANT_APPS = [
     "wagtail_tenants",
@@ -77,6 +80,7 @@ TENANT_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
 ]
+
 INSTALLED_APPS = list(SHARED_APPS) + [
     app for app in TENANT_APPS if app not in SHARED_APPS
 ]
@@ -236,3 +240,7 @@ WAGTAIL_TENANTS_SMTP_CLIENT = {
     "ssl_keyfile": "",
     "ssl_certfile": "",
 }
+
+WAGTAILADMIN_BASE_URL = "https://example.com"
+WAGTAIL_ENABLE_UPDATE_CHECK = "lts"
+WAGTAIL_ENABLE_WHATS_NEW_BANNER = False

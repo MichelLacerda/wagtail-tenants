@@ -10,7 +10,7 @@ from .admin import TenantAdminGroup
 from .panels import TenantPanel
 from .views import TenantAwareGroupViewSet, TenantUserAdmin
 
-modeladmin_register(TenantAdminGroup)
+# modeladmin_register(TenantAdminGroup)
 
 
 @hooks.register("register_admin_urls")
