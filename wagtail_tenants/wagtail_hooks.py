@@ -2,7 +2,8 @@ from django.apps import apps
 from django.urls import re_path
 from wagtail import hooks
 
-from wagtail_modeladmin import modeladmin_register
+from wagtail_modeladmin.options import modeladmin_register
+
 # from wagtail.contrib.modeladmin.options import modeladmin_register
 
 import wagtail_tenants.users.views.users as TenantUserViews  # import index, edit, create
