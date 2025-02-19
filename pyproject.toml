@@ -13,7 +13,8 @@ python = "^3.9.0"
 django-tenants = "^3.3.4"
 django-dbbackup = "^4.0.2"
 django = "<5.0,>=4.2"
-wagtail = "<6.0,>=5.2"
+# wagtail = "<6.0,>=5.2"
+wagtail = ">=5.2,<6.4"
 wagtail-modeladmin = ">=2.0.0"
 
 [tool.poetry.dev-dependencies]
